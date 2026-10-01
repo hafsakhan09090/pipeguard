@@ -1,0 +1,20 @@
+[
+  {"id": "PG-DEP-PYYAML-1", "ecosystem": "PyPI", "package": "pyyaml", "fixed": "5.4", "severity": "critical",
+   "cve": "CVE-2020-14343", "cwe": "CWE-20", "summary": "PyYAML < 5.4 allows arbitrary code execution via full_load/FullLoader on untrusted YAML."},
+  {"id": "PG-DEP-REQUESTS-1", "ecosystem": "PyPI", "package": "requests", "fixed": "2.31.0", "severity": "medium",
+   "cve": "CVE-2023-32681", "cwe": "CWE-200", "summary": "requests < 2.31.0 may leak Proxy-Authorization headers to destination servers on redirect."},
+  {"id": "PG-DEP-FLASK-1", "ecosystem": "PyPI", "package": "flask", "fixed": "2.2.5", "severity": "high",
+   "cve": "CVE-2023-30861", "cwe": "CWE-539", "summary": "Flask < 2.2.5 can cache session cookies on shared proxies (missing Vary: Cookie)."},
+  {"id": "PG-DEP-WERKZEUG-1", "ecosystem": "PyPI", "package": "werkzeug", "fixed": "2.2.3", "severity": "high",
+   "cve": "CVE-2023-25577", "cwe": "CWE-770", "summary": "Werkzeug < 2.2.3 multipart parser can be abused for resource exhaustion (DoS)."},
+  {"id": "PG-DEP-JINJA2-1", "ecosystem": "PyPI", "package": "jinja2", "fixed": "3.1.3", "severity": "medium",
+   "cve": "CVE-2024-22195", "cwe": "CWE-79", "summary": "Jinja2 < 3.1.3: xmlattr filter accepts keys with spaces, enabling HTML attribute injection (XSS)."},
+  {"id": "PG-DEP-PILLOW-1", "ecosystem": "PyPI", "package": "pillow", "fixed": "10.0.1", "severity": "high",
+   "cve": "CVE-2023-4863", "cwe": "CWE-787", "summary": "Pillow < 10.0.1 bundles a libwebp version with a heap buffer overflow."},
+  {"id": "PG-DEP-URLLIB3-1", "ecosystem": "PyPI", "package": "urllib3", "fixed": "1.26.5", "severity": "high",
+   "cve": "CVE-2021-33503", "cwe": "CWE-400", "summary": "urllib3 < 1.26.5 is vulnerable to ReDoS when parsing URLs with many '@' characters."},
+  {"id": "PG-DEP-LODASH-1", "ecosystem": "npm", "package": "lodash", "fixed": "4.17.21", "severity": "high",
+   "cve": "CVE-2021-23337", "cwe": "CWE-77", "summary": "lodash < 4.17.21 template function allows command injection."},
+  {"id": "PG-DEP-MINIMIST-1", "ecosystem": "npm", "package": "minimist", "fixed": "1.2.6", "severity": "critical",
+   "cve": "CVE-2021-44906", "cwe": "CWE-1321", "summary": "minimist < 1.2.6 is vulnerable to prototype pollution."}
+]

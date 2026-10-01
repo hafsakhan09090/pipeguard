@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+pipeguard-report/
+.venv/
+.DS_Store

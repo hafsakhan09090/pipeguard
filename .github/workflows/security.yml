@@ -1,0 +1,37 @@
+name: PipeGuard Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write   # needed to upload SARIF to the Security tab
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Run PipeGuard (fails the build on HIGH or above)
+        run: python -m pipeguard . -f sarif -f html -f md --fail-on high --skip deps --exclude tests/ --baseline baseline.json
+        continue-on-error: true   # let the upload steps below still run; remove to hard-fail
+
+      - name: Upload SARIF to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: pipeguard-report/pipeguard.sarif
+
+      - name: Upload HTML/Markdown report as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeguard-report
+          path: pipeguard-report/
